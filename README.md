@@ -51,17 +51,11 @@ Results for the corresponding query should look like this:
 {
   :splunk => {
     :results_url => "https://splunk.example.com/path/to/my/results",
-    :results => [
-      "test message 1",
-      "test message 2"
-    ],
+    :results => [25],
   }
   :mylogservice => {
     :results_url => "https://my.logger.com/path/to/results",
-    :results => [
-      "test message 1",
-      "test message 2",
-    ],
+    :results => [25],
   },
 }
 ```
