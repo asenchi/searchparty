@@ -48,3 +48,9 @@ module SearchParty
     end
   end
 end
+
+# payload = {
+#   :source => "hubot",
+#   :query => "index=production app=github status=502",
+#   :parse => "| timechart count by host",
+# }
