@@ -1,4 +1,4 @@
-module Dive
+module SearchParty
   class ParseResult
     def initialize(results={})
       @results = results

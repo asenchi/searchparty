@@ -1,4 +1,4 @@
-module Dive
+module SearchParty
   class Splunk < Service::Base
     def send_query(payload)
     end

@@ -4,7 +4,7 @@ require 'stringio'
 Scrolls.stream = StringIO.new
 
 $: << File.expand_path("../../lib", __FILE__)
-require 'dive'
+require 'searchparty'
 
 module TestLogger
   def self.log(data, &blk)
@@ -12,14 +12,14 @@ module TestLogger
   end
 end
 
-Dive.instrument_with(TestLogger.method(:log))
+SearchParty.instrument_with(TestLogger.method(:log))
 
 RSpec.configure do |c|
   c.before(:all) do
-    Dive.mock!
+    SearchParty.mock!
   end
 
   c.before(:each) do
-    Dive.reset!
+    SearchParty.reset!
   end
 end

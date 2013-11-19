@@ -1,15 +1,15 @@
 require "rest_client"
 
-require "dive/client"
-require "dive/route"
-require "dive/service"
-require "dive/version"
+require "searchparty/client"
+require "searchparty/route"
+require "searchparty/service"
+require "searchparty/version"
 
-require "dive/services/failure"
-require "dive/services/splunk"
+require "searchparty/services/failure"
+require "searchparty/services/splunk"
 
 
-module Dive
+module SearchParty
   def self.instrument_with(logger)
     @logger = logger
   end
@@ -35,6 +35,6 @@ module Dive
   end
 
   def self.log(data, &blk)
-    logger.call({:lib => :dive}.merge(data), &blk)
+    logger.call({:lib => :searchparty}.merge(data), &blk)
   end
 end

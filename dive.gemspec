@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'dive/version'
+require 'searchparty/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "dive"
-  spec.version       = Dive::VERSION
+  spec.name          = "searchparty"
+  spec.version       = SearchParty::VERSION
   spec.authors       = ["Curt Micol"]
   spec.email         = ["asenchi@asenchi.com"]
   spec.description   = "Abstract queries for Splunk and similar services"
   spec.summary       = "Abstract queries for Splunk and similar services"
-  spec.homepage      = "https://github.com/asenchi/dive"
+  spec.homepage      = "https://github.com/asenchi/searchparty"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

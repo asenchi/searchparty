@@ -1,4 +1,4 @@
-module Dive
+module SearchParty
   class Route
     attr_accessor :name, :services
 

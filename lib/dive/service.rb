@@ -1,4 +1,4 @@
-module Dive
+module SearchParty
   module Service
     class Base
       def initialize(url)
@@ -15,7 +15,7 @@ module Dive
         rescue RestClient::ServerBrokeConnection => e
           retries += 1
           raise if retries >= 3
-          Dive.log(:fn => :http_post, :at => :exception, :error => e.class, :retry => retries)
+          SearchParty.log(:fn => :http_post, :at => :exception, :error => e.class, :retry => retries)
           retry
         rescue RestClient::RequestTimeout
           raise
@@ -29,7 +29,7 @@ module Dive
         rescue RestClient::ServerBrokeConnection => e
           retries += 1
           raise if retries >= 3
-          Dive.log(:fn => :http_get, :at => :exception, :error => e.class, :retry => retries)
+          SearchParty.log(:fn => :http_get, :at => :exception, :error => e.class, :retry => retries)
           retry
         rescue RestClient::RequestTimeout
           raise
@@ -41,8 +41,8 @@ module Dive
   class ServiceFactory
     def self.create(url)
       svc_name = URI.parse(url).scheme
-      if Dive.const_defined?(svc_name.capitalize)
-        svc = Dive.const_get(svc_name.capitalize)
+      if SearchParty.const_defined?(svc_name.capitalize)
+        svc = SearchParty.const_get(svc_name.capitalize)
         svc.new(url)
       end
     end

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Dive::Client do
+describe SearchParty::Client do
   subject { described_class.new }
   let(:failure_svc) { "failure://X:X@failure.com" }
   let(:splunk_svc) { "splunk://user:pass@splunk.githubapp.com" }
@@ -26,7 +26,7 @@ describe Dive::Client do
       end
 
       it "should have a splunk service initiated" do
-        subject.routes.first.services.first.class.should == Dive::Failure
+        subject.routes.first.services.first.class.should == SearchParty::Failure
       end
     end
   end

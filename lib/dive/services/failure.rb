@@ -1,4 +1,4 @@
-module Dive
+module SearchParty
   class Failure < Service::Base
     def send_query(payload)
       raise "Failure"
